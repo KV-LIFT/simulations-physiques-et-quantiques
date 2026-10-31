@@ -19,16 +19,17 @@ echo ============================================================
 echo.
 echo   QISKIT - calcul quantique
 echo     1. Superposition quantique, 1 qubit ........ test.py
-echo     2. Mesure de 2 qubits ...................... test_qiskit_2qubits.py
+echo     2. Intrication, etat de Bell, 2 qubits ..... test_qiskit_2qubits.py
+echo     3. Teleportation quantique, 3 qubits ....... teleportation_quantique.py
 echo.
 echo   SIMULATIONS PHYSIQUES
-echo     3. Fluide 3D, 10 000 particules - Taichi ... fluide_taichi.py
-echo     4. Test Taichi / GPU ....................... test_taichi.py
-echo     5. Test MuJoCo - boite qui tombe ........... test_mujoco.py
+echo     4. Fluide 3D, 10 000 particules - Taichi ... fluide_taichi.py
+echo     5. Test Taichi / GPU ....................... test_taichi.py
+echo     6. Test MuJoCo - boite qui tombe ........... test_mujoco.py
 echo.
 echo   OUTILS
-echo     6. Installer Qiskit dans l'environnement
-echo     7. Ouvrir un terminal avec l'environnement active
+echo     7. Installer Qiskit dans l'environnement
+echo     8. Ouvrir un terminal avec l'environnement active
 echo     0. Quitter
 echo.
 set "CHOIX="
@@ -36,14 +37,15 @@ set /p "CHOIX=Ton choix : "
 
 if "%CHOIX%"=="1" call :qiskit test.py
 if "%CHOIX%"=="2" call :qiskit test_qiskit_2qubits.py
-if "%CHOIX%"=="3" call :run fluide_taichi.py
-if "%CHOIX%"=="4" call :run test_taichi.py
-if "%CHOIX%"=="5" call :run test_mujoco.py
-if "%CHOIX%"=="6" (
+if "%CHOIX%"=="3" call :qiskit teleportation_quantique.py
+if "%CHOIX%"=="4" call :run fluide_taichi.py
+if "%CHOIX%"=="5" call :run test_taichi.py
+if "%CHOIX%"=="6" call :run test_mujoco.py
+if "%CHOIX%"=="7" (
     call :install
     pause
 )
-if "%CHOIX%"=="7" start "env_311" cmd /k ""%~dp0env_311\Scripts\activate.bat""
+if "%CHOIX%"=="8" start "env_311" cmd /k ""%~dp0env_311\Scripts\activate.bat""
 if "%CHOIX%"=="0" exit /b 0
 goto menu
 
