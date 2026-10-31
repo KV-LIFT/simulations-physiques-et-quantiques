@@ -1,0 +1,5 @@
+numpy
+taichi==1.7.4
+mujoco
+qiskit
+qiskit-aer

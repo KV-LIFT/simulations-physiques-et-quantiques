@@ -1,0 +1,6 @@
+# Environnement Python local (trop lourd, se recree avec requirements.txt)
+env_311/
+__pycache__/
+*.pyc
+# Disposition des fenetres Taichi
+imgui.ini
